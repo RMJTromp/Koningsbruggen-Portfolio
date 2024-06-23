@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+@import "tailwind-colors";
+
+@import "components/header";
+@import "components/card";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+body {
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    color: $gray-800;
+    background: $gray-50;
+    max-width: 100vw;
+    overflow-x: hidden;
+
+    &:has(dialog:is([open])) {
+        overflow: hidden;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main {
+    a {
+        color: $indigo-600;
+        text-decoration: none;
+
+        &:hover {
+            color: $indigo-800;
+        }
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    margin: 2rem 0;
+
+    .container {
+        div.title {
+            display: grid;
+            grid-auto-flow: column;
+            text-transform: uppercase;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            font-size: 1rem;
+            margin-bottom: .75rem;
+
+            > div.blade {
+                position: relative;
+                display: grid;
+                grid-auto-flow: column;
+                align-items: center;
+                grid-template-columns: auto 1fr;
+
+                > svg {
+                    height: 100%;
+                }
+
+                &:after {
+                    content: "";
+                    display: block;
+                    background: currentColor;
+                    width: 100%;
+                    height: 100%;
+                    translate: -.3lh 0;
+                }
+            }
+        }
+    }
+}
+
+small {
+    color: $gray-500;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button {
+    border: unset;
+    background: $indigo-600;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5rem;
+    padding: .8rem 1.2rem;
+
+    &:hover:not(:disabled) {
+        background: $indigo-800;
+    }
+
+    &.secondary {
+        background: $gray-300;
+        color: $gray-800;
+
+        &:hover:not(:disabled) {
+            background: $gray-400;
+        }
+    }
+
+    &:disabled {
+        opacity: .5;
+        cursor: not-allowed;
+    }
+}
+
+dialog {
+    margin: auto;
+    padding: 1rem;
+    border: none;
+    border-radius: 3px;
+
+    &#new-post-dialog {
+        min-width: min(800px, 100vw);
+        min-height: 1lh;
+
+        > header {
+            margin-bottom: 1rem;
+        }
+
+        > footer {
+            display: grid;
+            grid-auto-flow: column;
+            gap: .5rem;
+            justify-content: flex-end;
+
+            > button {
+                padding: .6rem 1rem;
+            }
+        }
+    }
+
+    &::backdrop {
+        background: rgba(0, 0, 0, .5);
+    }
+}
+
+.form-group {
+    display: block;
+    margin-bottom: 1rem;
+
+    > label {
+        display: block;
+        margin-bottom: .25rem;
+        margin-left: .25rem;
+
+        &:has(~ *:required) {
+            &:after {
+                content: "*";
+                color: red;
+                margin-left: .25rem;
+            }
+        }
+    }
+
+    > input, textarea {
+        border-radius: 5px;
+        padding: .5rem 1.2rem;
+        display: block;
+        width: inherit;
+        border: 1px solid $gray-300;
+
+        &:is(input) {
+            width: 100%;
+        }
+    }
+}
