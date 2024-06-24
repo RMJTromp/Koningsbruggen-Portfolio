@@ -109,8 +109,8 @@ body > header nav > button:hover {
     text-align: center;
   }
   body > header:has(#nav:target) {
-    inset: 0;
-    position: absolute;
+    bottom: 0;
+    position: fixed;
   }
   body > header:has(#nav:target) nav {
     display: grid;

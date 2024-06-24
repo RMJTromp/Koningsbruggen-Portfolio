@@ -149,8 +149,8 @@ body {
             }
 
             &:has(#nav:target) {
-                inset: 0;
-                position: absolute;
+                bottom: 0;
+                position: fixed;
 
                 nav {
                     display: grid;
