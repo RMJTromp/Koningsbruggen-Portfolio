@@ -1,135 +1,177 @@
 @import "../tailwind-colors";
 
-body > header {
-    background-color: white;
-    box-shadow: 0 0 15px $indigo-100;
-    padding: 1rem;
-    top: 0;
-    left: 0;
-    right: 0;
-    position: sticky;
-    z-index: 1000;
+body {
+    > header {
+        background-color: white;
+        box-shadow: 0 0 15px $indigo-100;
+        padding: 1rem;
+        top: 0;
+        left: 0;
+        right: 0;
+        position: sticky;
+        z-index: 1000;
 
-    > .container {
-        display: grid;
-        grid-auto-flow: column;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    #logo {
-        font-size: 1.5rem;
-        font-family: "Tilt Warp", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: bold;
-        font-style: normal;
-        color: $indigo-600;
-        display: grid;
-        place-items: center;
-        position: relative;
-        text-transform: uppercase;
-
-        &:before {
-            $size: 2.5rem;
-            $border-width: 5px;
-            $gap-size: calc($size * .6);
-
-            content: "";
-            display: block;
-            background-color: currentColor;
-            position: absolute;
-            left: 0;
-            width: $size;
-            height: $size;
-            translate: calc($size / 4 * -1) 0;
-
-            clip-path: polygon(
-                    0 0,
-                    100% 0,
-                    100% calc(50% - ($gap-size / 2)),
-                    calc(100% - $border-width) calc(50% - ($gap-size / 2)),
-                    calc(100% - $border-width) $border-width,
-                    $border-width $border-width,
-                    $border-width calc(100% - $border-width),
-                    calc(100% - $border-width) calc(100% - $border-width),
-                    calc(100% - $border-width) calc(50% + ($gap-size / 2)),
-                    100% calc(50% + ($gap-size / 2)),
-                    100% 100%,
-                    0 100%
-            );
-        }
-
-        &:hover {
-            color: $indigo-900
-        }
-    }
-
-    nav {
-        display: grid;
-        grid-auto-flow: column;
-        gap: 3rem;
-        color: $indigo-600;
-        font-weight: bold;
-        align-items: center;
-
-        > ul {
+        > .container {
             display: grid;
             grid-auto-flow: column;
-            gap: 1.5rem;
-            list-style: none;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-            a {
-                display: grid;
-                grid-auto-flow: column;
-                gap: .4rem;
+        #logo {
+            font-size: 1.5rem;
+            font-family: "Tilt Warp", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: bold;
+            font-style: normal;
+            color: $indigo-600;
+            display: grid;
+            place-items: center;
+            position: relative;
+            text-transform: uppercase;
 
-                &:hover {
-                    color: $indigo-900
-                }
+            &:before {
+                $size: 2.5rem;
+                $border-width: 5px;
+                $gap-size: calc($size * .6);
+
+                content: "";
+                display: block;
+                background-color: currentColor;
+                position: absolute;
+                left: 0;
+                width: $size;
+                height: $size;
+                translate: calc($size / 4 * -1) 0;
+
+                clip-path: polygon(
+                        0 0,
+                        100% 0,
+                        100% calc(50% - ($gap-size / 2)),
+                        calc(100% - $border-width) calc(50% - ($gap-size / 2)),
+                        calc(100% - $border-width) $border-width,
+                        $border-width $border-width,
+                        $border-width calc(100% - $border-width),
+                        calc(100% - $border-width) calc(100% - $border-width),
+                        calc(100% - $border-width) calc(50% + ($gap-size / 2)),
+                        100% calc(50% + ($gap-size / 2)),
+                        100% 100%,
+                        0 100%
+                );
+            }
+
+            &:hover {
+                color: $indigo-900
             }
         }
 
-        > span#nav {
+        #nav {
             display: none;
             place-items: center;
             height: 45.59px;
+            color: $indigo-600;
+            width: auto;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
 
             > a {
                 display: none;
-            }
-
-            &:target {
-                > a[href="#nav"] {
-                    display: block;
-                }
+                width: 100%;
+                height: 100%;
+                place-items: center;
             }
 
             &:not(:target) {
-                > a[href="#"] {
-                    display: block;
+                > a[href="#nav"] {
+                    display: grid;
                 }
+            }
+
+            &:target {
+                > a[href="#"] {
+                    display: grid;
+                }
+            }
+
+            &:hover {
+                background-color: $indigo-100;
             }
         }
 
-        > button {
-            background: none;
-            border: 3px solid currentColor;
+        nav {
+            display: grid;
+            grid-auto-flow: column;
+            gap: 3rem;
             color: $indigo-600;
+            font-weight: bold;
+            align-items: center;
 
-            &:hover {
+            > ul {
+                display: grid;
+                grid-auto-flow: column;
+                gap: 1.5rem;
+                list-style: none;
+
+                a {
+                    display: grid;
+                    grid-auto-flow: column;
+                    gap: .4rem;
+
+                    &:hover {
+                        color: $indigo-900
+                    }
+                }
+            }
+
+            > button {
                 background: none;
-                color: $indigo-900;
+                border: 3px solid currentColor;
+                color: $indigo-600;
+
+                &:hover {
+                    background: none !important;
+                    color: $indigo-900;
+                }
             }
         }
 
         @media (max-width: 768px) {
-            > ul, button {
+            nav {
                 display: none;
+                grid-area: 2 / 1 / 3 / 3;
+                grid-auto-flow: row;
+
+                ul {
+                    grid-auto-flow: row;
+                    gap: .5rem;
+                    text-align: center;
+                }
             }
 
-            > span#nav {
+            &:has(#nav:target) {
+                inset: 0;
+                position: absolute;
+
+                nav {
+                    display: grid;
+                }
+
+                > .container {
+                    display: grid;
+                    grid-template-columns: repeat(2, auto);
+                    grid-template-rows: auto 1fr;
+                    row-gap: 2rem;
+                }
+            }
+
+            #nav {
                 display: grid;
+                justify-self: end;
             }
         }
+    }
+
+    &:has(#nav:target) {
+        overflow: hidden;
     }
 }
