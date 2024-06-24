@@ -1,0 +1,165 @@
+@import "../tailwind-colors";
+
+body > article {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    > header {
+
+        .title {
+            text-align: center;
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        > section:has(> .container) {
+            display: grid;
+            grid-auto-flow: row;
+            gap: 2rem;
+
+            > .container.wide > .thumbnail {
+                width: 100%;
+                max-height: min(60vh, 600px);
+                height: 60vh;
+                background-color: $gray-100;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 10px;
+                display: grid;
+                place-items: center;
+            }
+
+            > .container > time {
+                display: block;
+                margin-top: 1rem;
+                color: $gray-500;
+                font-size: small;
+            }
+        }
+    }
+
+    > div.container {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 2rem;
+
+        > aside {
+            position: relative;
+            min-width: 200px;
+
+            > .container {
+                padding: 0;
+                position: sticky;
+                top: 100px;
+            }
+
+            ul {
+                list-style: none;
+                display: grid;
+                align-items: center;
+                margin-left: 4px;
+
+                > li {
+                    color: $gray-500;
+                    position: relative;
+                    margin-left: .5rem;
+                    align-content: center;
+                    font-weight: 600;
+
+                    > a {
+                        display: block;
+                        padding: .75rem .5rem;
+                        transition: translate .3s;
+                    }
+
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        display: block;
+                        width: 4px;
+                        left: 0;
+                        top: 0;
+                        bottom: 0;
+                        background: $gray-200;
+                        translate: calc(-.5rem - 4px) 0;
+                    }
+
+                    &:hover {
+                        &:before {
+                            background: $indigo-200;
+                        }
+
+                        > a {
+                            translate: 8px 0;
+                        }
+                    }
+
+                    &.active {
+                        color: $gray-800;
+
+                        &:before {
+                            background: $indigo-500;
+                        }
+                    }
+                }
+            }
+        }
+
+        > div > main {
+            color: $gray-500;
+
+            *:is(h1, h2, h3, h4, h5, h6) {
+                color: $gray-800;
+                margin-bottom: .25rem;
+            }
+
+            > section {
+                > .container {
+                    padding: 0;
+                }
+
+                &:first-of-type {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+.personas {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+
+    .persona {
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.list-personas {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: row;
+    gap: .75rem;
+    margin: .5rem 0;
+
+    > li {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 1rem;
+        grid-template-columns: auto 1fr;
+
+        small, svg {
+            color: $gray-800;
+        }
+    }
+}

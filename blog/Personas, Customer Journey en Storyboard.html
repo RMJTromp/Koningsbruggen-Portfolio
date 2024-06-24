@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Blogger</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/pages/blog.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <a id="logo" href="../index.html">BLOGGER</a>
+                <span id="nav">
+                    <a href="#nav">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="1lh" height="1lh" fill="currentColor">
+                            <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="1lh" height="1lh" fill="currentColor">
+                            <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                        </svg>
+                    </a>
+                </span>
+                <nav>
+                    <ul>
+                        <li><a href="#">Documentatie</a></li>
+                        <li><a href="https://github.com/RMJTromp/Blogger" target="_blank">GitHub</a></li>
+                    </ul>
+                    <button id="new-post">Nieuwe Post</button>
+                </nav>
+            </div>
+        </header>
+
+        <article>
+            <header>
+                <section>
+                    <div class="container title">
+                        <span class="badge">Documentatie</span>
+                        <h1>Personas, Customer Journey en Storyboard</h1>
+                        <time datetime="2024-06-24T09:37:32Z+02:00">24 juni, 2024 • 09:37</time>
+                    </div>
+                    <div class="container wide">
+                        <div class="thumbnail">
+                            <div class="personas">
+                                <div class="persona">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="clamp(5rem, 20vw, 200px)" height="clamp(5rem, 20vw, 200px)">
+                                        <path fill="color-mix(in srgb, currentColor, transparent 60%)" d="M224 0c-35.3 0-64 28.7-64 64V96c23.3 0 45.2 6.2 64 17.1V64l352 0V352H284.4c22.4 16.5 40.6 38.5 52.4 64H576c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H224z"/>
+                                        <path fill="currentColor" d="M64 224a96 96 0 1 1 192 0A96 96 0 1 1 64 224zM0 485.3C0 411.7 59.7 352 133.3 352h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3zM416 288h64c17.7 0 32 14.3 32 32v32H384V320c0-17.7 14.3-32 32-32z"/>
+                                    </svg>
+                                    <small>Docent</small>
+                                </div>
+                                <div class="persona">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="clamp(5rem, 20vw, 200px)" height="clamp(5rem, 20vw, 200px)">
+                                        <path fill="color-mix(in srgb, currentColor, transparent 60%)" d="M96 160V144H352v16c0 70.7-57.3 128-128 128s-128-57.3-128-128z"/>
+                                        <path fill="currentColor" d="M219.3 .5c3.1-.6 6.3-.6 9.4 0l200 40C439.9 42.7 448 52.6 448 64s-8.1 21.3-19.3 23.5L352 102.9V144H96V102.9L48 93.3v65.1l15.7 78.4c.9 4.7-.3 9.6-3.3 13.3s-7.6 5.9-12.4 5.9H16c-4.8 0-9.3-2.1-12.4-5.9s-4.3-8.6-3.3-13.3L16 158.4V86.6C6.5 83.3 0 74.3 0 64C0 52.6 8.1 42.7 19.3 40.5l200-40zM111.9 327.7c10.5-3.4 21.8 .4 29.4 8.5l71 75.5c6.3 6.7 17 6.7 23.3 0l71-75.5c7.6-8.1 18.9-11.9 29.4-8.5C401 348.6 448 409.4 448 481.3c0 17-13.8 30.7-30.7 30.7H30.7C13.8 512 0 498.2 0 481.3c0-71.9 47-132.7 111.9-153.6z"/>
+                                    </svg>
+                                    <small>Student</small>
+                                </div>
+                                <div class="persona">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="clamp(5rem, 20vw, 200px)" height="clamp(5rem, 20vw, 200px)">
+                                        <path fill="color-mix(in srgb, currentColor, transparent 60%)" d="M320 0c-17.7 0-32 14.3-32 32V96h64V32c0-17.7-14.3-32-32-32zM192 400c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm96 0c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H304c-8.8 0-16 7.2-16 16zm96 0c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H400c-8.8 0-16 7.2-16 16zM80 224c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48H96V224H80zm480 0H544V416h16c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48z"/>
+                                        <path fill="currentColor" d="M168 96c-39.8 0-72 32.2-72 72V440c0 39.8 32.2 72 72 72H472c39.8 0 72-32.2 72-72V168c0-39.8-32.2-72-72-72H168zm40 288h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H208c-8.8 0-16-7.2-16-16s7.2-16 16-16zm96 0h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H304c-8.8 0-16-7.2-16-16s7.2-16 16-16zm96 0h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H400c-8.8 0-16-7.2-16-16s7.2-16 16-16zM184 256a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zm232-40a40 40 0 1 1 0 80 40 40 0 1 1 0-80z"/>
+                                    </svg>
+                                    <small>Crawlers</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </header>
+            <div class="container wide">
+                <aside>
+                    <div class="container">
+                        <ul>
+                            <li data-target="personas"><a href="#personas">Personas</a></li>
+                            <li data-target="customer-journey"><a href="#customer-journey">Customer Journey</a></li>
+                            <li data-target="storyboard"><a href="#storyboard">Storyboard</a></li>
+                        </ul>
+                    </div>
+                </aside>
+                <div>
+                    <main>
+                        <section id="personas">
+                            <div class="container">
+                                <h2>Personas</h2>
+                                <p>Voor dit project heb ik gekozen om de volgende 3 personas te gebruiken.</p>
+                                <ul class="list-personas">
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="2lh" height="2lh">
+                                            <path fill="color-mix(in srgb, currentColor, transparent 60%)" d="M224 0c-35.3 0-64 28.7-64 64V96c23.3 0 45.2 6.2 64 17.1V64l352 0V352H284.4c22.4 16.5 40.6 38.5 52.4 64H576c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H224z"/>
+                                            <path fill="currentColor" d="M64 224a96 96 0 1 1 192 0A96 96 0 1 1 64 224zM0 485.3C0 411.7 59.7 352 133.3 352h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3zM416 288h64c17.7 0 32 14.3 32 32v32H384V320c0-17.7 14.3-32 32-32z"/>
+                                        </svg>
+                                        <div>
+                                            <small>Docent</small>
+                                            <p>De docent is de bezoeker die op elke pagina gaat klikken om te controleren of de website goed werkt en aan de projecteisen voldoet.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="2lh" height="2lh">
+                                            <path fill="color-mix(in srgb, currentColor, transparent 60%)" d="M96 160V144H352v16c0 70.7-57.3 128-128 128s-128-57.3-128-128z"/>
+                                            <path fill="currentColor" d="M219.3 .5c3.1-.6 6.3-.6 9.4 0l200 40C439.9 42.7 448 52.6 448 64s-8.1 21.3-19.3 23.5L352 102.9V144H96V102.9L48 93.3v65.1l15.7 78.4c.9 4.7-.3 9.6-3.3 13.3s-7.6 5.9-12.4 5.9H16c-4.8 0-9.3-2.1-12.4-5.9s-4.3-8.6-3.3-13.3L16 158.4V86.6C6.5 83.3 0 74.3 0 64C0 52.6 8.1 42.7 19.3 40.5l200-40zM111.9 327.7c10.5-3.4 21.8 .4 29.4 8.5l71 75.5c6.3 6.7 17 6.7 23.3 0l71-75.5c7.6-8.1 18.9-11.9 29.4-8.5C401 348.6 448 409.4 448 481.3c0 17-13.8 30.7-30.7 30.7H30.7C13.8 512 0 498.2 0 481.3c0-71.9 47-132.7 111.9-153.6z"/>
+                                        </svg>
+                                        <div>
+                                            <small>Student</small>
+                                            <p>De student is de bezoeker die deze en alle andere pagina's heeft gemaakt. Hij moet ook door alle pagina's navigeren om te zorgen dat de juiste documentatie aanwezig is en kan dit project ook voor toekomstige referenties gebruiken.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="2lh" height="2lh">
+                                            <path fill="color-mix(in srgb, currentColor, transparent 60%)" d="M320 0c-17.7 0-32 14.3-32 32V96h64V32c0-17.7-14.3-32-32-32zM192 400c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm96 0c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H304c-8.8 0-16 7.2-16 16zm96 0c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H400c-8.8 0-16 7.2-16 16zM80 224c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48H96V224H80zm480 0H544V416h16c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48z"/>
+                                            <path fill="currentColor" d="M168 96c-39.8 0-72 32.2-72 72V440c0 39.8 32.2 72 72 72H472c39.8 0 72-32.2 72-72V168c0-39.8-32.2-72-72-72H168zm40 288h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H208c-8.8 0-16-7.2-16-16s7.2-16 16-16zm96 0h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H304c-8.8 0-16-7.2-16-16s7.2-16 16-16zm96 0h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H400c-8.8 0-16-7.2-16-16s7.2-16 16-16zM184 256a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zm232-40a40 40 0 1 1 0 80 40 40 0 1 1 0-80z"/>
+                                        </svg>
+                                        <div>
+                                            <small>Crawler</small>
+                                            <p>De crawler is de bezoeker die verschillende pagina's op deze website zal doorzoeken om SEO-inhoud te verzamelen voor zoekmachines of sociale media. Het is dus ook belangrijk dat ik rekening houd met crawlers bij het bouwen van deze website.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section id="customer-journey">
+                            <div class="container">
+                                <h2>Customer Journey</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta, urna a elementum sagittis, diam velit viverra turpis, sed dignissim erat elit eu ligula. Nunc quis maximus ligula, eu aliquet dolor. Suspendisse in mi vel lacus vehicula auctor sit amet ut ante. Phasellus dignissim et sem vel consequat. Curabitur ipsum ligula, sodales id eros quis, posuere tincidunt mi. Fusce feugiat tempus elit, sit amet euismod tellus bibendum semper. Nam non consequat odio.
+
+                                    Vestibulum magna magna, imperdiet non aliquet in, aliquam a odio. Sed quis dolor eu purus tincidunt vehicula non nec enim. Curabitur nec sem mollis, vehicula purus ac, sagittis est. Vestibulum varius eu metus pharetra imperdiet. Mauris commodo, diam ac fringilla tristique, turpis ligula tempor felis, eget maximus ipsum elit quis turpis. Etiam et condimentum arcu. Integer bibendum felis et tempus tincidunt. Nulla facilisi.
+
+                                    Maecenas nec mauris tellus. Integer leo urna, tincidunt nec euismod eget, consectetur sit amet erat. Aliquam eu euismod orci. Maecenas accumsan, lacus efficitur pharetra sodales, erat odio dignissim arcu, ut malesuada ante sem et diam. Nulla rhoncus hendrerit augue a efficitur. Nunc nec sodales velit. Vestibulum dui ex, finibus a auctor et, pulvinar non ex. Nulla ac imperdiet ante. Suspendisse quis tempor mi. Aliquam erat volutpat.</p>
+                            </div>
+                        </section>
+                        <section id="storyboard">
+                            <div class="container">
+                                <h2>Storyboard</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta, urna a elementum sagittis, diam velit viverra turpis, sed dignissim erat elit eu ligula. Nunc quis maximus ligula, eu aliquet dolor. Suspendisse in mi vel lacus vehicula auctor sit amet ut ante. Phasellus dignissim et sem vel consequat. Curabitur ipsum ligula, sodales id eros quis, posuere tincidunt mi. Fusce feugiat tempus elit, sit amet euismod tellus bibendum semper. Nam non consequat odio.
+
+                                    Vestibulum magna magna, imperdiet non aliquet in, aliquam a odio. Sed quis dolor eu purus tincidunt vehicula non nec enim. Curabitur nec sem mollis, vehicula purus ac, sagittis est. Vestibulum varius eu metus pharetra imperdiet. Mauris commodo, diam ac fringilla tristique, turpis ligula tempor felis, eget maximus ipsum elit quis turpis. Etiam et condimentum arcu. Integer bibendum felis et tempus tincidunt. Nulla facilisi.
+
+                                    Maecenas nec mauris tellus. Integer leo urna, tincidunt nec euismod eget, consectetur sit amet erat. Aliquam eu euismod orci. Maecenas accumsan, lacus efficitur pharetra sodales, erat odio dignissim arcu, ut malesuada ante sem et diam. Nulla rhoncus hendrerit augue a efficitur. Nunc nec sodales velit. Vestibulum dui ex, finibus a auctor et, pulvinar non ex. Nulla ac imperdiet ante. Suspendisse quis tempor mi. Aliquam erat volutpat.</p>
+                            </div>
+                        </section>
+                    </main>
+                    <footer>
+                        <div class="container">
+                            hello world
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </article>
+
+        <dialog id="new-post-dialog">
+            <header>
+                <h2>Nieuwe Post</h2>
+            </header>
+            <main>
+                <div class="form-group">
+                    <label for="post-title">Titel</label>
+                    <input type="text" id="post-title" placeholder="Lorem Ipsum" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="post-content">Inhoud</label>
+                    <textarea id="post-content" required></textarea>
+                </div>
+            </main>
+            <footer>
+                <button class="secondary" id="cancel-post">Annuleren</button>
+                <button id="save-post">Opslaan</button>
+            </footer>
+        </dialog>
+
+        <section id="templates">
+            <template id="blog-card">
+                <a class="card" href="#" draggable="true">
+                    <img class="thumbnail" src="https://picsum.photos/seed/picsum/500/300?asd" alt="Thumbnail" draggable="false">
+                    <div class="body">
+                        <div class="content">
+                            <small>Lorem Ipsum</small>
+                            <h3>lorem ipsum dolor sit amet. Quand temp aslet punt krendi.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi asperiores aspernatur delectus deleniti dolore doloremque earum magnam molestiae mollitia nemo, quasi quo sunt? Distinctio esse illo minus quia velit.</p>
+                        </div>
+                        <div class="author">
+                            <img class="profile" src="https://picsum.photos/64" alt="Author" draggable="false">
+                            <div class="details">
+                                <b>John Doe</b>
+                                <time>2 dagen geleden</time>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </template>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+        <script src="../assets/js/script.js" type="module"></script>
+    </body>
+</html>

@@ -1,6 +1,20 @@
 const $ = (selector) => document.querySelector(selector);
 
 document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll("[data-target]").forEach(el => {
+        const target = $("#" + el.dataset.target);
+        if(target) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) el.classList.add("active");
+                    else el.classList.remove("active");
+                });
+            });
+            observer.observe(target);
+        }
+    })
+
+
     {
         // create post logic
         const simplemde = new SimpleMDE({
