@@ -355,9 +355,37 @@ section {
                 justify-items: center;
                 grid-template-rows: auto auto 1fr;
 
+                svg {
+                    color: #4338ca;
+
+                    @media print {
+                        color: inherit;
+                    }
+                }
+
+                &:hover svg {
+                    animation: shake .5s;
+                }
+
                 p {
                     color: $gray-700;
                     margin: 0;
+                }
+
+                &:nth-child(2) {
+                    background: $indigo-600;
+                    color: white;
+
+                    svg { color: white }
+                    p { color: $gray-200; }
+
+                    @media print { // reset for printing
+                        background: white;
+                        color: $gray-800;
+
+                        svg { color: $gray-800 }
+                        p { color: $gray-700; }
+                    }
                 }
 
                 @media print {
@@ -392,6 +420,8 @@ section {
                 display: grid;
                 grid-auto-flow: column;
                 gap: 1rem;
+                transition: opacity .3s linear;
+                transition-delay: .25s;
 
                 .line {
                     background: $gray-300;
@@ -419,6 +449,7 @@ section {
                 .details {
                     b {
                         font-size: 1.25rem;
+                        transition: margin-left .3s ease-in-out;
                     }
 
                     small {
@@ -432,6 +463,16 @@ section {
                         margin-top: .5rem;
                     }
                 }
+
+                &:hover {
+                    .details  b {
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            &:has(.entry:hover) .entry:not(:hover) {
+                opacity: .5;
             }
         }
     }
@@ -440,6 +481,10 @@ section {
         background: white;
         box-shadow: 0 0 5px #0000001c;
         padding: 20px;
+
+        @media print {
+            display: none;
+        }
     }
 
     @media (max-width: 900px) {
@@ -458,4 +503,28 @@ section {
 
 aside hr {
     margin: 2rem .5rem;
+}
+
+@keyframes shake {
+    @for $i from 1 through 10 {
+        #{10% * $i} {
+            @if $i % 2 == 0 {
+                transform: translateX(3px) rotate(2deg);
+            } @else if $i % 4 == 1 {
+                transform: translateX(-3px) rotate(-2deg);
+            } @else if $i == 5 {
+                transform: translateX(2px) rotate(1deg);
+            } @else if $i == 6 {
+                transform: translateX(-2px) rotate(-1deg);
+            } @else if $i == 7 {
+                transform: translateX(2px) rotate(1deg);
+            } @else if $i == 8 {
+                transform: translateX(-2px) rotate(-1deg);
+            } @else if $i == 9 {
+                transform: translateX(1px) rotate(0);
+            } @else if $i == 10 {
+                transform: translateX(-1px) rotate(0);
+            }
+        }
+    }
 }

@@ -306,9 +306,42 @@ section#kennis div.cards > div.card {
   justify-items: center;
   grid-template-rows: auto auto 1fr;
 }
+section#kennis div.cards > div.card svg {
+  color: #4338ca;
+}
+@media print {
+  section#kennis div.cards > div.card svg {
+    color: inherit;
+  }
+}
+section#kennis div.cards > div.card:hover svg {
+  animation: shake 0.5s;
+}
 section#kennis div.cards > div.card p {
   color: #374151;
   margin: 0;
+}
+section#kennis div.cards > div.card:nth-child(2) {
+  background: #4f46e5;
+  color: white;
+}
+section#kennis div.cards > div.card:nth-child(2) svg {
+  color: white;
+}
+section#kennis div.cards > div.card:nth-child(2) p {
+  color: #e5e7eb;
+}
+@media print {
+  section#kennis div.cards > div.card:nth-child(2) {
+    background: white;
+    color: #1f2937;
+  }
+  section#kennis div.cards > div.card:nth-child(2) svg {
+    color: #1f2937;
+  }
+  section#kennis div.cards > div.card:nth-child(2) p {
+    color: #374151;
+  }
 }
 @media print {
   section#kennis div.cards > div.card {
@@ -340,6 +373,8 @@ section#opleidingen .timeline .entry {
   display: grid;
   grid-auto-flow: column;
   gap: 1rem;
+  transition: opacity 0.3s linear;
+  transition-delay: 0.25s;
 }
 section#opleidingen .timeline .entry .line {
   background: #d1d5db;
@@ -364,6 +399,7 @@ section#opleidingen .timeline .entry .line:before {
 }
 section#opleidingen .timeline .entry .details b {
   font-size: 1.25rem;
+  transition: margin-left 0.3s ease-in-out;
 }
 section#opleidingen .timeline .entry .details small {
   font-weight: normal;
@@ -374,10 +410,21 @@ section#opleidingen .timeline .entry .details small {
 section#opleidingen .timeline .entry .details p {
   margin-top: 0.5rem;
 }
+section#opleidingen .timeline .entry:hover .details b {
+  margin-left: 10px;
+}
+section#opleidingen .timeline:has(.entry:hover) .entry:not(:hover) {
+  opacity: 0.5;
+}
 section#contact {
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1098039216);
   padding: 20px;
+}
+@media print {
+  section#contact {
+    display: none;
+  }
 }
 @media (max-width: 900px) {
   section#about .body {
@@ -391,6 +438,36 @@ section#contact {
 
 aside hr {
   margin: 2rem 0.5rem;
+}
+
+@keyframes shake {
+  10% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  20% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  40% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  50% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  60% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  70% {
+    transform: translateX(2px) rotate(1deg);
+  }
+  80% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  90% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  100% {
+    transform: translateX(3px) rotate(2deg);
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
