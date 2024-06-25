@@ -159,6 +159,8 @@ section {
                 overflow: hidden;
                 border-radius: 10px;
                 height: 150px;
+                -webkit-print-color-adjust:exact !important;
+                print-color-adjust:exact !important;
 
                 &:after {
                     content: "";
@@ -301,6 +303,11 @@ section {
                     margin: 0;
                 }
             }
+
+            @media (max-width: 950px) {
+                grid-auto-flow: row;
+                grid-template-columns: unset;
+            }
         }
     }
 
@@ -322,6 +329,8 @@ section {
                     height: -webkit-fill-available;
                     margin: 20px auto 10px;
                     position: relative;
+                    -webkit-print-color-adjust: exact !important;
+                    print-color-adjust:exact !important;
 
                     &:before {
                         content: "";
@@ -375,6 +384,12 @@ section {
     grid-auto-flow: column;
     grid-template-columns: 1fr 200px;
     gap: 4rem;
+
+    @media (max-width: 800px) {
+        grid-auto-flow: row;
+        grid-template-columns: unset;
+        gap: 1rem;
+    }
 }
 
 aside hr {

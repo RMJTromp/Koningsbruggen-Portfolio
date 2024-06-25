@@ -141,6 +141,8 @@ section#profiel .profile > .banner {
   overflow: hidden;
   border-radius: 10px;
   height: 150px;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
 }
 section#profiel .profile > .banner:after {
   content: "";
@@ -260,6 +262,12 @@ section#kennis div.cards > div.card p {
   color: #374151;
   margin: 0;
 }
+@media (max-width: 950px) {
+  section#kennis div.cards {
+    grid-auto-flow: row;
+    grid-template-columns: unset;
+  }
+}
 section#opleidingen .timeline {
   display: grid;
   grid-auto-flow: row;
@@ -277,6 +285,8 @@ section#opleidingen .timeline .entry .line {
   height: -webkit-fill-available;
   margin: 20px auto 10px;
   position: relative;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
 }
 section#opleidingen .timeline .entry .line:before {
   content: "";
@@ -316,6 +326,13 @@ section#opleidingen .timeline .entry .details p {
   grid-auto-flow: column;
   grid-template-columns: 1fr 200px;
   gap: 4rem;
+}
+@media (max-width: 800px) {
+  .profile-content {
+    grid-auto-flow: row;
+    grid-template-columns: unset;
+    gap: 1rem;
+  }
 }
 
 aside hr {
