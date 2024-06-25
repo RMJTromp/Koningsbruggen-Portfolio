@@ -1,128 +1,186 @@
-.hero {
+main .container p {
+  margin-bottom: 1lh;
+}
+
+section.dark {
+  background: #1f2937;
+  color: #d1d5db;
+}
+section.dark *:is(h1, h2, h3, h4, h5, h6) {
+  color: white;
+}
+
+section#hero {
+  height: 100vh;
+  width: 100vw;
+  background: white;
+  margin: 0;
+  padding: 2rem;
+}
+section#hero > .container {
+  background-color: #4F46E5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg fill-opacity='0.17'%3E%3Ccircle fill='%234F46E5' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%23534de8' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%235753ea' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%235b5aec' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%235f60ef' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%236366F1' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  max-width: unset;
+  border-radius: 80px;
+  overflow: hidden;
+  position: relative;
+}
+section#hero > .container > img {
+  position: absolute;
+  bottom: -5vw;
+  left: 50%;
+  translate: -50% 0;
+  object-fit: contain;
+  object-position: bottom;
+  width: max(100%, 681px);
+  height: 100%;
+  max-height: 95%;
+  min-height: 95%;
+  pointer-events: none;
+}
+section#hero > .container .name {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-family: "Tilt Warp", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+section#hero > .container .name span {
+  display: block;
+  font-size: 13vw;
+  text-wrap: nowrap;
+  text-transform: uppercase;
+}
+section#hero > .container .name span:not(:first-of-type) {
+  color: color-mix(in srgb, white, transparent 95%);
+  user-select: none;
+}
+section#hero > .container .text {
   display: grid;
   grid-auto-flow: column;
+  justify-content: space-between;
+  color: white;
+  height: 100%;
   align-items: center;
-  grid-template-columns: 50% 50%;
-  gap: 2rem;
+  position: relative;
+  max-width: 1431px;
+  margin: 0 auto;
 }
-.hero > svg {
-  width: 100%;
-  height: auto;
-}
-.hero .title {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-.hero .title > h1 {
-  font-size: 3rem;
-}
-.hero > div {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-@media (max-width: 768px) {
-  .hero {
-    grid-auto-flow: row;
-    grid-template-columns: unset;
-  }
-  .hero > svg {
-    max-height: 300px;
-  }
-}
-
-section:has(> .hero) {
-  margin-bottom: 5rem;
-}
-
-.blogs {
-  margin: 0 0.5rem;
+section#hero > .container .text > div {
+  max-width: 325px;
+  font-size: 1.5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 0.5rem;
-  row-gap: 1rem;
+  grid-auto-flow: row;
+  gap: 1rem;
 }
-.blogs > .card {
-  display: block;
-  width: 100%;
+section#hero > .container .text > div > p {
+  margin: 0;
+}
+section#hero > .container .text > div.left {
+  translate: 0 -10vh;
+}
+section#hero > .container .text > div.right {
+  align-self: end;
+  translate: 0 -20vh;
+  text-align: right;
+  justify-items: end;
+}
+section#hero > .container .text > div > ul {
+  list-style: none;
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+  place-items: center;
+  width: min-content;
+}
+section#hero > .container .text > div > ul a {
+  background: #1f2937;
+  color: #c7d2fe;
+  fill: currentColor;
+  display: grid;
+  place-items: center;
   padding: 0.5rem;
-  border-radius: 3px;
-  transition: box-shadow 0.1s;
-  color: #1f2937;
+  border-radius: 50%;
+  transition: scale 0.1s ease-in-out;
 }
-.blogs > .card > .thumbnail {
-  object-fit: cover;
-  object-position: center;
-  border-radius: 3px;
-  overflow: hidden;
-  width: 100%;
-  transition: scale 0.3s;
+section#hero > .container .text > div > ul a:is(:hover, :focus) {
+  background: #111827;
+  color: white;
+  scale: 1.05;
 }
-.blogs > .card > .body {
-  display: grid;
-  grid-auto-flow: row;
-  gap: 1rem;
-  padding: 0.5rem 1rem;
+section#about {
+  padding: 40px 0;
 }
-.blogs > .card > .body > .content > small {
-  font-size: 0.75rem;
-  display: block;
-  margin-bottom: 0.25rem;
-}
-.blogs > .card > .body > .content > h3 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.blogs > .card > .body > .content > p {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.blogs > .card > .body > .author {
+section#about .body {
+  margin-top: 2rem;
   display: grid;
   grid-auto-flow: column;
-  gap: 1rem;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  font-size: 0.8rem;
-  color: #6b7280;
+  max-width: 100%;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  gap: 2rem;
 }
-.blogs > .card > .body > .author > .profile {
+section#about .body > img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
-  aspect-ratio: 1/1;
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  overflow: hidden;
+  border-radius: 5px;
 }
-.blogs > .card > .body > .author > .details {
+section#kennis-en-vaardigheden .body {
+  padding: 0 0.5rem;
+}
+section#kennis-en-vaardigheden .body ul {
   display: grid;
   grid-auto-flow: row;
+  list-style: none;
+  gap: 0.5rem;
 }
-.blogs > .card > .body > .author > .details > b {
-  color: #1f2937;
+section#kennis-en-vaardigheden .body ul li {
+  background: white;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid #312e81;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.01);
 }
-.blogs > .card:hover {
-  box-shadow: 0 0 15px color-mix(in srgb, #e0e7ff, transparent 20%);
+section#kennis-en-vaardigheden .body ul li b:after {
+  content: ":";
 }
-.blogs > .card:hover > .thumbnail {
-  scale: 1.005;
+section#kennis-en-vaardigheden .body ul li p {
+  margin: 0;
+  display: inline-block;
 }
-@media (max-width: 990px) {
-  .blogs {
-    grid-template-columns: 1fr 1fr;
+section#kennis-en-vaardigheden .body ul li > div {
+  transition: translate 0.2s ease-in-out;
+}
+section#kennis-en-vaardigheden .body ul li:hover {
+  border-left-color: #4f46e5;
+}
+section#kennis-en-vaardigheden .body ul li:hover > div {
+  translate: 8px 0;
+}
+@media (max-width: 900px) {
+  section#about .body {
+    grid-template-columns: unset;
+    grid-auto-flow: row;
   }
-}
-@media (max-width: 705px) {
-  .blogs {
-    grid-template-columns: 1fr;
-    margin: 0;
+  section#about .body > img {
+    max-height: 400px;
   }
 }
 
