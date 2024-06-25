@@ -1,0 +1,135 @@
+body > article {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+body > article > header .title {
+  text-align: center;
+}
+body > article > header .title h1 {
+  font-size: 2rem;
+}
+body > article > header > section:has(> .container) {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 2rem;
+}
+body > article > header > section:has(> .container) > .container.wide > .thumbnail {
+  width: 100%;
+  max-height: min(60vh, 600px);
+  height: 60vh;
+  background-color: #f3f4f6;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
+body > article > header > section:has(> .container) > .container > time {
+  display: block;
+  margin-top: 1rem;
+  color: #6b7280;
+  font-size: small;
+}
+body > article > div.container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2rem;
+}
+body > article > div.container > aside {
+  position: relative;
+  min-width: 200px;
+}
+body > article > div.container > aside > .container {
+  padding: 0;
+  position: sticky;
+  top: 100px;
+}
+body > article > div.container > aside ul {
+  list-style: none;
+  display: grid;
+  align-items: center;
+  margin-left: 4px;
+}
+body > article > div.container > aside ul > li {
+  color: #6b7280;
+  position: relative;
+  margin-left: 0.5rem;
+  align-content: center;
+  font-weight: 600;
+}
+body > article > div.container > aside ul > li > a {
+  display: block;
+  padding: 0.75rem 0.5rem;
+  transition: translate 0.3s;
+}
+body > article > div.container > aside ul > li:before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 4px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #e5e7eb;
+  translate: calc(-0.5rem - 4px) 0;
+}
+body > article > div.container > aside ul > li:hover:before {
+  background: #c7d2fe;
+}
+body > article > div.container > aside ul > li:hover > a {
+  translate: 8px 0;
+}
+body > article > div.container > aside ul > li.active {
+  color: #1f2937;
+}
+body > article > div.container > aside ul > li.active:before {
+  background: #6366f1;
+}
+body > article > div.container > div > main {
+  color: #6b7280;
+}
+body > article > div.container > div > main *:is(h1, h2, h3, h4, h5, h6) {
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+body > article > div.container > div > main > section > .container {
+  padding: 0;
+}
+body > article > div.container > div > main > section:first-of-type {
+  margin-top: 0;
+}
+
+.personas {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+.personas .persona {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.list-personas {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
+}
+.list-personas > li {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  grid-template-columns: auto 1fr;
+}
+.list-personas > li small, .list-personas > li svg {
+  color: #1f2937;
+}
+
+/*# sourceMappingURL=blog.css.map */
