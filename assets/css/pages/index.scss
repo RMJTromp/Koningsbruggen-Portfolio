@@ -20,6 +20,7 @@ section {
         background: white;
         margin: 0;
         padding: 2rem;
+        max-width: 100%;
 
         > .container {
             background-color: #4F46E5;
@@ -144,6 +145,32 @@ section {
         }
     }
 
+    &#over-mij {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 1fr 200px;
+        gap: 4rem;
+
+        @media (max-width: 800px) {
+            grid-auto-flow: row;
+            grid-template-columns: unset;
+            gap: 1rem;
+
+            #details {
+                ul:not(#socials) {
+                    display: flex;
+                    flex-wrap: wrap;
+                    column-gap: 2rem;
+                    row-gap: .75rem;
+
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
     &#profiel {
         .profile {
             width: 100%;
@@ -205,6 +232,13 @@ section {
 
     &#details {
         margin: 0;
+
+        div.socials {
+            @media print {
+                display: none;
+            }
+        }
+
         ul {
             list-style: none;
 
@@ -275,6 +309,29 @@ section {
                 }
             }
         }
+
+        @media print {
+            .cards {
+                overflow-x: unset;
+                grid-auto-flow: row;
+                justify-content: center;
+                max-width: unset;
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+
+                > .card {
+                    width: 100% !important;
+                    max-width: unset;
+                    box-shadow: unset !important;
+                    border: 1px solid $gray-300;
+
+                    main p {
+                        margin-bottom: .25rem;
+                    }
+                }
+            }
+        }
     }
 
     &#kennis {
@@ -302,9 +359,23 @@ section {
                     color: $gray-700;
                     margin: 0;
                 }
+
+                @media print {
+                    box-shadow: unset !important;
+                    border: 1px solid $gray-300;
+                }
             }
 
-            @media (max-width: 950px) {
+            @media (max-width: 950px) and (min-width: 581px) {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-flow: row;
+
+                > div.card:nth-child(3) {
+                    grid-area: 2 / 1 / 3 / 3;
+                }
+            }
+
+            @media (max-width: 580px) {
                 grid-auto-flow: row;
                 grid-template-columns: unset;
             }
@@ -365,6 +436,12 @@ section {
         }
     }
 
+    &#contact {
+        background: white;
+        box-shadow: 0 0 5px #0000001c;
+        padding: 20px;
+    }
+
     @media (max-width: 900px) {
         &#about {
             .body {
@@ -376,19 +453,6 @@ section {
                 }
             }
         }
-    }
-}
-
-.profile-content {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: 1fr 200px;
-    gap: 4rem;
-
-    @media (max-width: 800px) {
-        grid-auto-flow: row;
-        grid-template-columns: unset;
-        gap: 1rem;
     }
 }
 

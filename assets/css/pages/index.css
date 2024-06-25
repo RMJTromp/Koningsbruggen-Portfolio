@@ -16,6 +16,7 @@ section#hero {
   background: white;
   margin: 0;
   padding: 2rem;
+  max-width: 100%;
 }
 section#hero > .container {
   background-color: #4F46E5;
@@ -127,6 +128,28 @@ section#hero > .container .text > div > ul a:is(:hover, :focus) {
     display: none;
   }
 }
+section#over-mij {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 200px;
+  gap: 4rem;
+}
+@media (max-width: 800px) {
+  section#over-mij {
+    grid-auto-flow: row;
+    grid-template-columns: unset;
+    gap: 1rem;
+  }
+  section#over-mij #details ul:not(#socials) {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+    row-gap: 0.75rem;
+  }
+  section#over-mij #details ul:not(#socials) p {
+    margin-bottom: 0;
+  }
+}
 section#profiel .profile {
   width: 100%;
   position: relative;
@@ -180,6 +203,11 @@ section#profiel .profile > .details small {
 }
 section#details {
   margin: 0;
+}
+@media print {
+  section#details div.socials {
+    display: none;
+  }
 }
 section#details ul {
   list-style: none;
@@ -238,6 +266,26 @@ section#ervaringen .cards article.card > main small {
   font-weight: normal;
   text-transform: none;
 }
+@media print {
+  section#ervaringen .cards {
+    overflow-x: unset;
+    grid-auto-flow: row;
+    justify-content: center;
+    max-width: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  section#ervaringen .cards > .card {
+    width: 100% !important;
+    max-width: unset;
+    box-shadow: unset !important;
+    border: 1px solid #d1d5db;
+  }
+  section#ervaringen .cards > .card main p {
+    margin-bottom: 0.25rem;
+  }
+}
 section#kennis div.cards {
   display: grid;
   grid-auto-flow: column;
@@ -262,7 +310,22 @@ section#kennis div.cards > div.card p {
   color: #374151;
   margin: 0;
 }
-@media (max-width: 950px) {
+@media print {
+  section#kennis div.cards > div.card {
+    box-shadow: unset !important;
+    border: 1px solid #d1d5db;
+  }
+}
+@media (max-width: 950px) and (min-width: 581px) {
+  section#kennis div.cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+  }
+  section#kennis div.cards > div.card:nth-child(3) {
+    grid-area: 2/1/3/3;
+  }
+}
+@media (max-width: 580px) {
   section#kennis div.cards {
     grid-auto-flow: row;
     grid-template-columns: unset;
@@ -311,6 +374,11 @@ section#opleidingen .timeline .entry .details small {
 section#opleidingen .timeline .entry .details p {
   margin-top: 0.5rem;
 }
+section#contact {
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1098039216);
+  padding: 20px;
+}
 @media (max-width: 900px) {
   section#about .body {
     grid-template-columns: unset;
@@ -318,20 +386,6 @@ section#opleidingen .timeline .entry .details p {
   }
   section#about .body > img {
     max-height: 400px;
-  }
-}
-
-.profile-content {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 1fr 200px;
-  gap: 4rem;
-}
-@media (max-width: 800px) {
-  .profile-content {
-    grid-auto-flow: row;
-    grid-template-columns: unset;
-    gap: 1rem;
   }
 }
 
