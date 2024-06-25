@@ -14,6 +14,7 @@
         <meta property="og:image" content="./assets/img/face.png">
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/pages/index.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
         <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
         <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./assets/img/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
@@ -24,7 +25,7 @@
         <meta name="theme-color" content="#ffffff">
     </head>
     <body>
-        <main style="padding-bottom: 50vh">
+        <main>
             <section id="hero">
                 <div class="container">
                     <div class="name">
@@ -87,7 +88,7 @@
             </section>
             <header>
                 <div class="container">
-                    <a id="logo" href="./index.html">John Doe</a>
+                    <a class="logo" href="./index.html">John Doe</a>
                     <span id="nav">
                     <a href="#nav">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="1lh" height="1lh" fill="currentColor">
@@ -340,59 +341,52 @@
                         </div>
                     </section>
                 </main>
-                <footer>
-                    <section id="contact">
-                        <div class="container">
-                            <h4>CONTACT</h4>
-                        </div>
-                    </section>
-                </footer>
             </article>
         </main>
+        <footer>
+            <div class="container">
+                <div>
+                    <a class="logo" href="./index.html">John Doe</a>
+                    <ul>
+                        <li><a href="#over-mij">Over mij</a></li>
+                        <li><a href="#ervaringen">Werkervaringen</a></li>
+                        <li><a href="#kennis">Kennis en vaardigheden</a></li>
+                        <li><a href="#opleidingen">Opleidingen</a></li>
+                    </ul>
+                </div>
+                <hr>
+                <p>&copy; 2024 John Doe. Alle rechten voorbehouden.</p>
+            </div>
+        </footer>
 
         <dialog id="new-post-dialog">
             <header>
-                <h2>Nieuwe Post</h2>
+                <h2>Neem contact</h2>
             </header>
             <main>
                 <div class="form-group">
-                    <label for="post-title">Titel</label>
-                    <input type="text" id="post-title" placeholder="Lorem Ipsum" required autofocus>
+                    <label for="subject">Onderwerp</label>
+                    <input type="text" id="subject" placeholder="Lorem Ipsum" required autofocus>
                 </div>
 
                 <div class="form-group">
-                    <label for="post-content">Inhoud</label>
-                    <textarea id="post-content" required></textarea>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="lorem.ipsum@example.com" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="body">Inhoud</label>
+                    <textarea id="body" required></textarea>
                 </div>
             </main>
             <footer>
-                <button class="secondary" id="cancel-post">Annuleren</button>
-                <button id="save-post">Opslaan</button>
+                <button class="secondary" id="cancel">Annuleren</button>
+                <button id="send">Verstuur</button>
             </footer>
         </dialog>
 
-        <section id="templates">
-            <template id="blog-card">
-                <a class="card" href="#" draggable="true">
-                    <img class="thumbnail" src="https://picsum.photos/seed/picsum/500/300?asd" alt="Thumbnail" draggable="false">
-                    <div class="body">
-                        <div class="content">
-                            <small>Lorem Ipsum</small>
-                            <h3>lorem ipsum dolor sit amet. Quand temp aslet punt krendi.</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi asperiores aspernatur delectus deleniti dolore doloremque earum magnam molestiae mollitia nemo, quasi quo sunt? Distinctio esse illo minus quia velit.</p>
-                        </div>
-                        <div class="author">
-                            <img class="profile" src="https://picsum.photos/64" alt="Author" draggable="false">
-                            <div class="details">
-                                <b>John Doe</b>
-                                <time>2 dagen geleden</time>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </template>
-        </section>
 
+        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
         <script src="./assets/js/script.js" type="module"></script>
     </body>
 </html>

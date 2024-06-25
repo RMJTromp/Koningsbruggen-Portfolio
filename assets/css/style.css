@@ -17,32 +17,6 @@ main > header > .container {
   justify-content: space-between;
   align-items: center;
 }
-main > header #logo {
-  font-size: 1.5rem;
-  font-family: "Tilt Warp", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: bold;
-  font-style: normal;
-  color: #4f46e5;
-  display: grid;
-  place-items: center;
-  position: relative;
-  text-transform: uppercase;
-}
-main > header #logo:before {
-  content: "";
-  display: block;
-  background-color: currentColor;
-  position: absolute;
-  left: 0;
-  width: 2.5rem;
-  height: 2.5rem;
-  translate: -0.625rem 0;
-  clip-path: polygon(0 0, 100% 0, 100% calc(50% - 0.75rem), calc(100% - 5px) calc(50% - 0.75rem), calc(100% - 5px) 5px, 5px 5px, 5px calc(100% - 5px), calc(100% - 5px) calc(100% - 5px), calc(100% - 5px) calc(50% + 0.75rem), 100% calc(50% + 0.75rem), 100% 100%, 0 100%);
-}
-main > header #logo:hover {
-  color: #312e81;
-}
 main > header #nav {
   display: none;
   place-items: center;
@@ -319,6 +293,89 @@ hr {
   border: none;
   border-top: 1px solid #e5e7eb;
   margin: 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-family: "Tilt Warp", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  color: #4f46e5;
+  display: grid;
+  place-items: center;
+  position: relative;
+  text-transform: uppercase;
+}
+.logo:before {
+  content: "";
+  display: block;
+  background-color: currentColor;
+  position: absolute;
+  left: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  translate: -0.625rem 0;
+  clip-path: polygon(0 0, 100% 0, 100% calc(50% - 0.75rem), calc(100% - 5px) calc(50% - 0.75rem), calc(100% - 5px) 5px, 5px 5px, 5px calc(100% - 5px), calc(100% - 5px) calc(100% - 5px), calc(100% - 5px) calc(50% + 0.75rem), 100% calc(50% + 0.75rem), 100% 100%, 0 100%);
+}
+.logo:hover {
+  color: #312e81;
+}
+
+body > footer {
+  display: grid;
+  place-items: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  background: #111827;
+  color: #d1d5db;
+  font-size: small;
+}
+body > footer .container {
+  width: 100%;
+  text-align: center;
+  padding: 30px 20px;
+}
+body > footer .container > div {
+  display: grid;
+  justify-content: space-between;
+  padding: 0 20px;
+  grid-auto-flow: column;
+}
+body > footer .container > div > a {
+  color: white;
+  justify-self: start;
+}
+body > footer .container > div > a:hover {
+  color: #a5b4fc;
+}
+body > footer .container > div > ul {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  align-items: center;
+}
+body > footer .container > div > ul a:hover {
+  color: #a5b4fc;
+}
+@media (max-width: 550px) {
+  body > footer .container > div > ul {
+    grid-auto-flow: row;
+    gap: 0.25rem;
+  }
+}
+@media (max-width: 675px) {
+  body > footer .container > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  body > footer .container > div > a {
+    justify-self: center;
+    width: max-content;
+    margin: 0 auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

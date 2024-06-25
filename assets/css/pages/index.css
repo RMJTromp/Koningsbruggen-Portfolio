@@ -416,16 +416,6 @@ section#opleidingen .timeline .entry:hover .details b {
 section#opleidingen .timeline:has(.entry:hover) .entry:not(:hover) {
   opacity: 0.5;
 }
-section#contact {
-  background: white;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1098039216);
-  padding: 20px;
-}
-@media print {
-  section#contact {
-    display: none;
-  }
-}
 @media (max-width: 900px) {
   section#about .body {
     grid-template-columns: unset;

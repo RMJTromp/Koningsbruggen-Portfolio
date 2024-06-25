@@ -477,16 +477,6 @@ section {
         }
     }
 
-    &#contact {
-        background: white;
-        box-shadow: 0 0 5px #0000001c;
-        padding: 20px;
-
-        @media print {
-            display: none;
-        }
-    }
-
     @media (max-width: 900px) {
         &#about {
             .body {
