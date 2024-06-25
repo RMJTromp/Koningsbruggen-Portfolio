@@ -3,7 +3,7 @@
 main {
     > header {
         background-color: white;
-        box-shadow: 0 0 15px $indigo-100;
+        box-shadow: 0 0 5px #0000001c;
         padding: 1rem;
         top: 0;
         left: 0;
@@ -174,6 +174,10 @@ main {
                 display: grid;
                 justify-self: end;
             }
+        }
+
+        @media print {
+            display: none;
         }
     }
 

@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
 main > header {
   background-color: white;
-  box-shadow: 0 0 15px #e0e7ff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1098039216);
   padding: 1rem;
   top: 0;
   left: 0;
@@ -127,6 +127,11 @@ main > header nav > button:hover {
     justify-self: end;
   }
 }
+@media print {
+  main > header {
+    display: none;
+  }
+}
 main:has(#nav:target) {
   overflow: hidden;
 }
@@ -170,6 +175,10 @@ main a:hover {
   margin: 0 auto;
   padding: 0 20px;
 }
+.container .container {
+  max-width: unset;
+  padding: 0;
+}
 .container.wide {
   max-width: 1400px;
   width: 100%;
@@ -177,6 +186,9 @@ main a:hover {
 
 section {
   margin: 2rem 0;
+}
+section .container > :is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: 0.25lh;
 }
 section .container div.title {
   display: grid;
@@ -301,6 +313,12 @@ dialog::backdrop {
 
 img {
   user-select: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

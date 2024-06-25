@@ -49,6 +49,11 @@ main {
     margin: 0 auto;
     padding: 0 20px;
 
+    .container {
+        max-width: unset;
+        padding: 0;
+    }
+
     &.wide {
         max-width: 1400px;
         width: 100%;
@@ -59,6 +64,10 @@ section {
     margin: 2rem 0;
 
     .container {
+        > :is(h1, h2, h3, h4, h5, h6) {
+            margin-bottom: .25lh;
+        }
+
         div.title {
             display: grid;
             grid-auto-flow: column;
@@ -202,4 +211,10 @@ dialog {
 
 img {
     user-select: none;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid $gray-200;
+    margin: 2rem;
 }
