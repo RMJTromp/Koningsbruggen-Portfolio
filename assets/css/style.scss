@@ -12,6 +12,24 @@
     font-family: inherit;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: $gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $gray-300;
+    border-radius: 10px;
+}
+
 body {
     font-family: "Roboto Flex", sans-serif;
     font-optical-sizing: auto;
