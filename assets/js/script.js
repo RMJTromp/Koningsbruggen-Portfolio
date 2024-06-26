@@ -28,15 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         {
             // smooth scroll on click
-            const smoothScrollLinks = header.querySelectorAll('nav a[href^="#"]');
+            const smoothScrollLinks = header.querySelectorAll('a[href^="#"]');
 
             smoothScrollLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
-                    event.preventDefault();
+                    if(window.innerWidth <= 850) return;
                     const targetId = this.getAttribute('href').substring(1);
                     const targetElement = document.getElementById(targetId);
 
                     if (targetElement && targetElement.matches("section")) {
+                        event.preventDefault();
                         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 15;
 
                         window.scrollTo({
