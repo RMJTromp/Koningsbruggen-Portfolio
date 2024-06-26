@@ -6,7 +6,7 @@
         <meta name="keywords" content="Muzikant, Componist, Muziekproducer, Multi-instrumentalist, Live optredens, Creatieve muziekproductie">
         <meta name="author" content="John Doe">
         <link rel="canonical" href="https://koningsbruggen-portfolio.pages.dev/">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>John Doe</title>
         <meta name="robots" content="index, follow">
@@ -25,7 +25,6 @@
         <meta name="twitter:image" content="https://koningsbruggen-portfolio.pages.dev/assets/img/face.png">
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/pages/index.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
         <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
         <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./assets/img/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
@@ -54,7 +53,18 @@
                         <span>John Doe</span>
                         <span>John Doe</span>
                     </div>
-                    <img src="./assets/img/frontal.png" alt="John Doe Frontal Image" draggable="false">
+                    <img
+                        alt="John Doe Frontal Image" draggable="false" loading="lazy"
+                        sizes="(max-width: 1036px) 100vw, 1036px"
+                        srcset="./assets/img/frontal/200.png 200w,
+                                ./assets/img/frontal/430.png 430w,
+                                ./assets/img/frontal/601.png 601w,
+                                ./assets/img/frontal/734.png 734w,
+                                ./assets/img/frontal/830.png 830w,
+                                ./assets/img/frontal/938.png 938w,
+                                ./assets/img/frontal/1018.png 1018w,
+                                ./assets/img/frontal/1036.png 1036w"
+                        src="./assets/img/frontal/1036.png">
                     <div class="text">
                         <div class="left">
                             <p>Wat mijn muziek uniek maakt, is de combinatie van technische expertise en een persoonlijk tintje</p>
@@ -129,7 +139,7 @@
                         <div class="container">
                             <div class="profile">
                                 <span class="banner"></span>
-                                <img src="./assets/img/face.png" alt="John Doe Face">
+                                <img src="./assets/img/face.png" alt="John Doe Face" width="150" height="150" loading="lazy">
                                 <div class="details">
                                     <h4>John Doe</h4>
                                     <small>Muzikant en Songwriter</small>
@@ -398,8 +408,6 @@
             </footer>
         </dialog>
 
-
-        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
         <script src="./assets/js/script.js" type="module"></script>
     </body>
 </html>

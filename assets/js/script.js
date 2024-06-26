@@ -2,16 +2,10 @@ const $ = (selector) => document.querySelector(selector);
 
 document.addEventListener('DOMContentLoaded', function() {
     {
-        // contact logic
-        const simplemde = new SimpleMDE({
-            element: $("#body"),
-            spellChecker: false
-        });
-
         const closeDialog = () => {
-            simplemde.value("");
             $("#subject").value = "";
             $("#email").value = "";
+            $("#body").value = "";
 
             const dialog = $("#new-post-dialog");
             dialog.close();
