@@ -4,6 +4,7 @@
 @import "tailwind-colors";
 
 @import "components/header";
+@import "components/album";
 
 * {
     margin: 0;
@@ -83,6 +84,10 @@ section {
     .container {
         > :is(h1, h2, h3, h4, h5, h6) {
             margin-bottom: .25lh;
+        }
+
+        h1 {
+            font-size: 1.17rem;
         }
 
         div.title {

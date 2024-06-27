@@ -1,0 +1,84 @@
+.album {
+    aspect-ratio: 1/1;
+    position: relative;
+    width: min-content;
+    height: min-content;
+    display: inline-block;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        inset: 0;
+        background-image: url("../img/album/vinyl.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 90%;
+        transition: translate .5s ease-in-out;
+        transition-delay: .1s;
+        pointer-events: none;
+    }
+
+    > img {
+        position: relative;
+        border-radius: 5px;
+        object-fit: cover;
+        object-position: center;
+        width: 200px;
+        height: 200px;
+        aspect-ratio: 1 / 1;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .11);
+    }
+
+    &:hover {
+        &:before {
+            translate: 50% 0;
+        }
+    }
+}
+
+.album-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+
+.albums {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 5px;
+    margin: -5px;
+
+    &:has(> .album, > .album-info) {
+        padding-right: 100px;
+
+        > :is(.album, .album-info) {
+            @for $i from 1 through 10 {
+                &:is(:nth-child(#{$i})) {
+                    z-index: #{10 - $i};
+                }
+            }
+        }
+    }
+
+    .badge {
+        padding: .2rem .7rem;
+    }
+
+    > .album-info > .details {
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 2;
+        }
+
+        > small {
+            display: block;
+        }
+    }
+}
